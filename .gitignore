@@ -1,2 +1,5 @@
 # Ignora la carpeta de Wireframes
 .Wireframes
+
+# Ignora el archivo Tips
+.tips.html
