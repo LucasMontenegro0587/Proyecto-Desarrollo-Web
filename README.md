@@ -1,2 +1,2 @@
 # Proyecto Coderhouse: Desarrollo Web
-Construcción y Publicación de una Página Web Avanzada con GitHub
+Construcción desde 0 + publicación de una página web avanzada en Github
