@@ -187,6 +187,9 @@ a {
   text-transform: uppercase;
   align-self: auto;
   justify-content: auto;
+  opacity: 0; /* Invisible inicialmente */
+  animation: fadeIn 5s ease-in forwards; /* La animación durará 5 segundos */
+  animation-delay: 2s; /* Espera 2 segundos antes de iniciar la animación */
 }
 
 #referencias-personales > div {
@@ -286,10 +289,15 @@ footer {
 /* Dispositivos Móviles */
 @media (min-width: 320px) and (max-width: 600px) {
   body {
-    width: auto;
+    width: 100%; /* Asegura que el body ocupe todo el ancho disponible */
     height: auto;
     padding: 10px;
-    margin: 5px;
+    margin: 0; /* Elimina márgenes para aprovechar al máximo el espacio */
+    font-size: 16px; /* Tamaño base para la tipografía */
+  }
+
+  header, h2, h3, h4, h5, p, .img-container, .bloque-de-videos, .tabla-de-contenidos-interna, #tabla-de-contenidos-principal, .referencias-externas, #referencias-personales, .grid-item-externo, .grid-item-interno, .grid-item-principal {
+    box-sizing: border-box; /* Asegura que el padding y border se incluyan en el cálculo del ancho y alto */
   }
 
   header {
@@ -319,7 +327,8 @@ footer {
   }
 
   .img-container, img {
-    width: calc(100% - 10px);
+    width: 100%; /* Ajusta las imágenes para que ocupen todo el ancho disponible */
+    height: auto; /* Mantiene la proporción de la imagen */
   }
 
   .bloque-de-videos {
@@ -340,13 +349,14 @@ footer {
   }
 }
 
-/* Tablets */
+/* Tablets y dispositivos de tamaño medio */
 @media (min-width: 720px) and (max-width: 900px) {
   body {
     width: auto;
     height: auto;
     padding: 15px;
     margin: 10px;
+    font-size: 18px; /* Tamaño base para pantallas medianas */
   }
 
   header {
@@ -376,7 +386,8 @@ footer {
   }
 
   .img-container, img {
-    width: calc(50% - 10px);
+    width: calc(50% - 10px); /* 50% del ancho del contenedor, con espacio para el margen */
+    height: auto; /* Imagen  proporcional */
   }
 
   .bloque-de-videos {
@@ -385,29 +396,31 @@ footer {
   }
 
   .tabla-de-contenidos-interna {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales en la tabla de contenidos interna */
   }
 
   #tabla-de-contenidos-principal {
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(2, auto); /* Dos columnas automáticas en la tabla de contenidos principal */
   }
 
   .referencias-externas, #referencias-personales {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales en las secciones de referencias */
   }
 
   .grid-item-externo, .grid-item-interno, .grid-item-principal {
-    padding: 10px;
+    padding: 10px; /* Espaciado interno de los elementos de la cuadrícula */
   }
 }
 
 /* Escritorio */
+/* Media Queries para Computadoras de Escritorio */
 @media (min-width: 1024px) and (max-width: 1200px) {
   body {
     width: auto;
     height: auto;
     padding: 20px;
     margin: 20px;
+    font-size: 20px; /* Tamaño base para la tipografía en pantallas grandes */
   }
 
   header {
@@ -437,28 +450,39 @@ footer {
   }
 
   .img-container, img {
-    width: calc(33% - 10px);
+    width: calc(33% - 10px); /* Tres imágenes por fila, ajustadas con un pequeño margen */
+    height: auto; /* Mantiene la proporción de la imagen */
   }
 
   .bloque-de-videos {
     flex-direction: row;
-    gap: 30px;
+    gap: 30px; /* Mayor espacio entre los videos */
   }
 
   .tabla-de-contenidos-interna {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr; /* Tres columnas iguales en la tabla de contenidos interna */
   }
 
   #tabla-de-contenidos-principal {
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(3, auto); /* Tres columnas automáticas en la tabla de contenidos principal */
   }
 
   .referencias-externas, #referencias-personales {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales en las secciones de referencias */
   }
 
   .grid-item-externo, .grid-item-interno, .grid-item-principal {
-    padding: 15px;
+    padding: 15px; /* Espaciado interno de los elementos de la cuadrícula */
+  }
+}
+
+/* Animaciones - #referencias-personales */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
