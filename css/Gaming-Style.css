@@ -1,50 +1,44 @@
 @charset "UTF-8";
 /* Estilos generales para todos los HTML's - VER */
-/* Color para usar (opcional) #2B2B2B */
 body {
-  background-image: url("img/retrato-futurista.jpg"); /* Ruta a tu imagen de fondo */
-  background-size: auto; /* Ajusta la imagen para cubrir toda la pantalla */
-  background-position: center; /* Centra la imagen */
+  background-image: url("img/retrato-futurista.jpg");
+  background-size: auto;
+  background-position: center;
   font-family: "Arial", sans-serif;
   line-height: 1.6;
-  justify-content: auto;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding: auto;
+  margin: 0 10px;
+  padding: 0;
   width: auto;
   height: auto;
   background-color: black;
   color: #cccccc;
 }
 
-/* Títulos - NO TOCAR - ARREGLADO */
+/* Títulos */
 h2, h3, h4, h5 {
   text-align: justify;
-  margin-left: 15px;
-  margin-right: 15px;
+  margin: 0 15px;
 }
 
 header {
   color: rgb(235, 156, 255);
   font-family: "Play", sans-serif;
   font-size: 30px;
-  font-style: bold;
+  font-weight: bold;
   text-align: center;
 }
 
 h2 {
-  color: rgba(63, 1, 104, 0.5411764706);
+  color: rgba(63, 1, 104, 0.541);
   font-family: "Black Ops One", system-ui;
   font-size: 25px;
-  font-weight: normal;
   font-weight: bold;
 }
 
 h3 {
-  color: rgba(255, 0, 0, 0.5411764706);
+  color: rgba(255, 0, 0, 0.541);
   font-family: "Black Ops One", system-ui;
   font-size: 20px;
-  font-style: normal;
   font-weight: normal;
   text-decoration: underline;
 }
@@ -53,7 +47,6 @@ h4 {
   color: #ffa319;
   font-family: "Black Ops One", system-ui;
   font-size: 18px;
-  font-style: normal;
   font-weight: bold;
 }
 
@@ -61,33 +54,31 @@ h5 {
   color: #eeff00;
   font-family: "Black Ops One", system-ui;
   font-size: 15px;
-  font-style: normal;
   font-weight: bolder;
 }
 
-/* Párrafos - NO TOCAR - ARREGLADO */
+/* Párrafos */
 p {
   color: rgb(218, 218, 218);
   font-family: "Black Ops One", system-ui;
   font-size: 15px;
   font-weight: bold;
   text-align: justify;
-  margin-left: 15px;
-  margin-right: 15px;
+  margin: 0 15px;
 }
 
-/* Navegación - ARREGLAR LUEGO DE LA PRE-ENTREGA 2 */
+/* Navegación */
 .grillas {
   margin-right: 30px;
 }
 
-/* Secciones y derivados - NO TOCAR - ARREGLADO */
+/* Secciones y derivados */
 section {
   margin: 2%;
   background-color: #333;
 }
 
-/* Blockquoute - VER */
+/* Blockquote */
 blockquote {
   margin: 0 10px;
   padding: 10px;
@@ -96,14 +87,14 @@ blockquote {
   color: #ccc;
 }
 
-/* Enlaces - VER */
+/* Enlaces */
 a {
   color: rgb(30, 0, 100);
   text-decoration: none;
   font-size: 15px;
 }
 
-/* Grillas para enlaces internos + externos con función Repeat - NO TOCAR - ARREGLADOS */
+/* Grillas */
 .tabla-de-contenidos-interna {
   display: grid;
   list-style-type: none;
@@ -113,16 +104,14 @@ a {
   grid-template-rows: auto auto;
   grid-template-columns: 1fr 1fr;
   gap: 5px;
-  height: auto;
-  width: auto;
   margin: auto;
   padding: auto;
 }
 
 .grid-item-externo {
-  border: 2px solid black; /* Borde negro de 2px en cada celda */
+  border: 2px solid black;
   font-weight: bold;
-  text-align: center; /* Alineación del contenido */
+  text-align: center;
   grid-row: repeat(2, auto);
   grid-column: repeat(2, auto);
 }
@@ -131,30 +120,28 @@ a {
   background-color: grey;
   font-weight: bold;
   padding: 10px;
-  border: 2px solid black; /* Borde negro de 2px en cada celda */
-  text-align: center; /* Alineación del contenido */
+  border: 2px solid black;
+  text-align: center;
 }
 
 #tabla-de-contenidos-principal {
   background-color: rgb(196, 193, 193);
   display: grid;
-  grid: repeat(2, auto)/auto-flow 200px;
+  grid-template: repeat(2, auto)/auto-flow 200px;
   list-style-type: none;
   justify-content: center;
   gap: 2%;
   padding: 10px;
-  border: 5px solid #000; /* Borde externo más grueso */
+  border: 5px solid #000;
   text-align: justify;
   text-transform: uppercase;
   margin: auto;
-  width: auto;
-  height: auto;
 }
 
 .grid-item-principal {
-  border: 2px solid #000; /* Borde interno */
+  border: 2px solid #000;
   font-weight: bold;
-  text-align: center; /* Alineación del contenido */
+  text-align: center;
   justify-content: center;
   padding: 10px;
 }
@@ -167,12 +154,8 @@ a {
   text-align: center;
   text-transform: uppercase;
   align-items: center;
-  grid-row: auto;
-  grid-column: auto;
   grid-template-rows: repeat(2, auto);
   grid-template-columns: repeat(3, auto);
-  height: auto;
-  width: auto;
   margin: auto;
   padding: auto;
 }
@@ -180,27 +163,23 @@ a {
 #referencias-personales {
   display: grid;
   list-style-type: none;
-  grid: repeat(1, auto) auto;
+  grid-template-rows: repeat(1, auto);
   border: 2px solid #8f0202;
   border-radius: 2%;
   text-align: center;
   text-transform: uppercase;
-  align-self: auto;
-  justify-content: auto;
-  opacity: 0; /* Invisible inicialmente */
-  animation: fadeIn 5s ease-in forwards; /* La animación durará 5 segundos */
-  animation-delay: 2s; /* Espera 2 segundos antes de iniciar la animación */
+  opacity: 0;
+  animation: fadeIn 5s ease-in forwards;
+  animation-delay: 2s;
 }
 
 #referencias-personales > div {
-  width: auto;
-  height: auto;
   margin: auto;
   padding: auto;
   text-align: auto;
 }
 
-/* Listados - <ol> nombrados con clase - NO TOCAR - ARREGLADO */
+/* Listados */
 ul, li a {
   font-size: 18px;
 }
@@ -219,20 +198,20 @@ ul, li a {
   gap: 500px;
 }
 
-/* Encuesta - NO TOCAR - ARREGLADO */
+/* Encuesta */
 .Encuesta {
-  border: 2px solid #000000;
+  border: 2px solid #000;
   border-radius: 5px;
-  background-color: rgba(245, 245, 245, 0.3490196078);
-  color: #000000;
+  background-color: rgba(245, 245, 245, 0.349);
+  color: #000;
   max-width: auto;
   padding: auto;
   margin: auto;
   text-align: center;
 }
 
-/* inputs - NO TOCAR - ARREGLADO */
-input [type=submit], button {
+/* Inputs */
+input[type=submit], button {
   background-color: #09ff00;
   color: #fff;
   border: none;
@@ -241,40 +220,36 @@ input [type=submit], button {
   transition: background-color 0.3s ease;
 }
 
-/* Box Modeling y Flexbox para imágenes - NO TOCAR - ARREGLADO */
+/* Box Modeling y Flexbox para imágenes */
 .img-container {
-  display: flexbox;
-  gap: 10px; /* Espacio entre las imágenes */
+  display: flex;
+  gap: 10px;
 }
 
 .img-container, img {
   align-items: auto;
   margin: auto;
-  width: calc(50% - 10px); /* Ajusta el ancho de las imágenes al 50% del contenedor menos el espacio entre ellas */
-  height: auto; /* Ajusta automáticamente la altura */
-  border-radius: 8px; /* Bordes redondeados */
-  box-shadow: 0 0 100px rgb(0, 0, 0); /* Sombra ligera */
+  width: calc(50% - 10px);
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 100px rgb(0, 0, 0);
 }
 
 .Dedicatoria {
   margin: auto;
   padding: auto;
-  width: auto;
-  height: auto;
   text-align: center;
 }
 
-/* Opinión personal - NO TOCAR - ARREGLADO */
+/* Opinión personal */
 #opinion {
   text-align: justify;
   margin: 1%;
 }
 
-/* Footer - NO TOCAR - ARREGLADO */
+/* Footer */
 footer {
   font-family: "Exo 2", sans-serif;
-  font-style: normal;
-  font-optical-sizing: auto;
   font-weight: bold;
   text-align: center;
   background-color: #333;
@@ -285,198 +260,152 @@ footer {
   width: center;
 }
 
-/* Media Query */
-/* Dispositivos Móviles */
+/* Media Queries */
 @media (min-width: 320px) and (max-width: 600px) {
   body {
-    width: 100%; /* Asegura que el body ocupe todo el ancho disponible */
+    width: 100%;
     height: auto;
     padding: 10px;
-    margin: 0; /* Elimina márgenes para aprovechar al máximo el espacio */
-    font-size: 16px; /* Tamaño base para la tipografía */
+    margin: 0;
+    font-size: 16px;
   }
-
   header, h2, h3, h4, h5, p, .img-container, .bloque-de-videos, .tabla-de-contenidos-interna, #tabla-de-contenidos-principal, .referencias-externas, #referencias-personales, .grid-item-externo, .grid-item-interno, .grid-item-principal {
-    box-sizing: border-box; /* Asegura que el padding y border se incluyan en el cálculo del ancho y alto */
+    box-sizing: border-box;
   }
-
   header {
     font-size: 24px;
   }
-
   h2 {
     font-size: 20px;
   }
-
   h3 {
     font-size: 18px;
   }
-
   h4 {
     font-size: 16px;
   }
-
   h5 {
     font-size: 14px;
   }
-
   p {
     font-size: 14px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 0 10px;
   }
-
   .img-container, img {
-    width: 100%; /* Ajusta las imágenes para que ocupen todo el ancho disponible */
-    height: auto; /* Mantiene la proporción de la imagen */
+    width: 100%;
+    height: auto;
   }
-
   .bloque-de-videos {
     flex-direction: column;
     gap: 10px;
   }
-
   .tabla-de-contenidos-interna, #tabla-de-contenidos-principal {
     grid-template-columns: 1fr;
   }
-
   .referencias-externas, #referencias-personales {
     grid-template-columns: 1fr;
   }
-
   .grid-item-externo, .grid-item-interno, .grid-item-principal {
     padding: 5px;
   }
 }
-
-/* Tablets y dispositivos de tamaño medio */
 @media (min-width: 720px) and (max-width: 900px) {
   body {
     width: auto;
     height: auto;
     padding: 15px;
     margin: 10px;
-    font-size: 18px; /* Tamaño base para pantallas medianas */
+    font-size: 18px;
   }
-
   header {
     font-size: 28px;
   }
-
   h2 {
     font-size: 22px;
   }
-
   h3 {
     font-size: 19px;
   }
-
   h4 {
     font-size: 17px;
   }
-
   h5 {
     font-size: 15px;
   }
-
   p {
     font-size: 16px;
-    margin-left: 12px;
-    margin-right: 12px;
+    margin: 0 12px;
   }
-
   .img-container, img {
-    width: calc(50% - 10px); /* 50% del ancho del contenedor, con espacio para el margen */
-    height: auto; /* Imagen  proporcional */
+    width: calc(50% - 10px);
+    height: auto;
   }
-
   .bloque-de-videos {
     flex-direction: row;
     gap: 20px;
   }
-
   .tabla-de-contenidos-interna {
-    grid-template-columns: 1fr 1fr; /* Dos columnas iguales en la tabla de contenidos interna */
+    grid-template-columns: 1fr 1fr;
   }
-
   #tabla-de-contenidos-principal {
-    grid-template-columns: repeat(2, auto); /* Dos columnas automáticas en la tabla de contenidos principal */
+    grid-template-columns: repeat(2, auto);
   }
-
   .referencias-externas, #referencias-personales {
-    grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales en las secciones de referencias */
+    grid-template-columns: repeat(2, 1fr);
   }
-
   .grid-item-externo, .grid-item-interno, .grid-item-principal {
-    padding: 10px; /* Espaciado interno de los elementos de la cuadrícula */
+    padding: 10px;
   }
 }
-
-/* Escritorio */
-/* Media Queries para Computadoras de Escritorio */
 @media (min-width: 1024px) and (max-width: 1200px) {
   body {
     width: auto;
     height: auto;
     padding: 20px;
     margin: 20px;
-    font-size: 20px; /* Tamaño base para la tipografía en pantallas grandes */
+    font-size: 20px;
   }
-
   header {
     font-size: 32px;
   }
-
   h2 {
     font-size: 24px;
   }
-
   h3 {
     font-size: 21px;
   }
-
   h4 {
     font-size: 19px;
   }
-
   h5 {
     font-size: 17px;
   }
-
   p {
     font-size: 18px;
-    margin-left: 15px;
-    margin-right: 15px;
+    margin: 0 15px;
   }
-
   .img-container, img {
-    width: calc(33% - 10px); /* Tres imágenes por fila, ajustadas con un pequeño margen */
-    height: auto; /* Mantiene la proporción de la imagen */
+    width: calc(33% - 10px);
+    height: auto;
   }
-
   .bloque-de-videos {
     flex-direction: row;
-    gap: 30px; /* Mayor espacio entre los videos */
+    gap: 30px;
   }
-
   .tabla-de-contenidos-interna {
-    grid-template-columns: 1fr 1fr 1fr; /* Tres columnas iguales en la tabla de contenidos interna */
+    grid-template-columns: 1fr 1fr 1fr;
   }
-
   #tabla-de-contenidos-principal {
-    grid-template-columns: repeat(3, auto); /* Tres columnas automáticas en la tabla de contenidos principal */
+    grid-template-columns: repeat(3, auto);
   }
-
   .referencias-externas, #referencias-personales {
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales en las secciones de referencias */
+    grid-template-columns: repeat(3, 1fr);
   }
-
   .grid-item-externo, .grid-item-interno, .grid-item-principal {
-    padding: 15px; /* Espaciado interno de los elementos de la cuadrícula */
+    padding: 15px;
   }
 }
-
-/* Animaciones - #referencias-personales */
+/* Animaciones */
 @keyframes fadeIn {
   from {
     opacity: 0;

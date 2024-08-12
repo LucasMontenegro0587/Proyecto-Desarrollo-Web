@@ -76,7 +76,7 @@ p {
   margin-right: 15px;
 }
 
-/* Navegación - ARREGLAR LUEGO DE LA PRE-ENTREGA 2 */
+/* Navegación */
 .grillas {
   margin-right: 30px;
 }
@@ -138,7 +138,8 @@ a {
 #tabla-de-contenidos-principal {
   background-color: rgb(196, 193, 193);
   display: grid;
-  grid: repeat(2, auto)/auto-flow 200px;
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+  grid-template-rows: repeat(5, auto); /* Cinco filas */
   list-style-type: none;
   justify-content: center;
   gap: 2%;
@@ -400,7 +401,8 @@ footer {
   }
 
   #tabla-de-contenidos-principal {
-    grid-template-columns: repeat(2, auto); /* Dos columnas automáticas en la tabla de contenidos principal */
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas en tablets */
+    grid-template-rows: repeat(5, auto); /* Cinco filas en tablets */
   }
 
   .referencias-externas, #referencias-personales {
@@ -413,7 +415,6 @@ footer {
 }
 
 /* Escritorio */
-/* Media Queries para Computadoras de Escritorio */
 @media (min-width: 1024px) and (max-width: 1200px) {
   body {
     width: auto;
@@ -464,7 +465,8 @@ footer {
   }
 
   #tabla-de-contenidos-principal {
-    grid-template-columns: repeat(3, auto); /* Tres columnas automáticas en la tabla de contenidos principal */
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas en escritorios */
+    grid-template-rows: repeat(5, auto); /* Cinco filas en escritorios */
   }
 
   .referencias-externas, #referencias-personales {
@@ -473,6 +475,13 @@ footer {
 
   .grid-item-externo, .grid-item-interno, .grid-item-principal {
     padding: 15px; /* Espaciado interno de los elementos de la cuadrícula */
+  }
+}
+
+@media (min-width: 1200px) {
+  #tabla-de-contenidos-principal {
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas grandes */
+    grid-template-rows: repeat(5, auto); /* Cinco filas en pantallas grandes */
   }
 }
 
