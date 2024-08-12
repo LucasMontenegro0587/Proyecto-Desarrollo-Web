@@ -330,9 +330,8 @@ footer {
   }
 
   .img-container, img {
-    width: 100%; /* Ajusta las imágenes para que ocupen todo el ancho disponible */
-    height: auto; /* Mantiene la proporción de la imagen */
-  }
+    flex: 1 1 100%; /* En pantallas pequeñas, cada imagen ocupará el 100% del ancho del contenedor */
+  }  }
 
   .bloque-de-videos {
     flex-direction: column;
@@ -351,6 +350,7 @@ footer {
     padding: 5px;
   }
 }
+
 
 /* Tablets y dispositivos de tamaño medio */
 @media (min-width: 720px) and (max-width: 900px) {
@@ -389,8 +389,9 @@ footer {
   }
 
   .img-container, img {
+    flex: 1 1 calc(50% - 10px); /* Dos columnas en pantallas medianas */
     width: calc(50% - 10px); /* 50% del ancho del contenedor, con espacio para el margen */
-    height: auto; /* Imagen  proporcional */
+    height: auto; /* Imagen proporcional */
   }
 
   .bloque-de-videos {
