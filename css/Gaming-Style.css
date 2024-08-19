@@ -8,8 +8,6 @@ body {
   font-family: "Arial", sans-serif;
   line-height: 1.6;
   justify-content: auto;
-  margin-left: 10px;
-  margin-right: 10px;
   padding: auto;
   width: auto;
   height: auto;
@@ -78,7 +76,7 @@ p {
 
 /* Navegación */
 .grillas {
-  margin-right: 30px;
+  animation: focus 1s ease-in-out;
 }
 
 /* Secciones y derivados - NO TOCAR - ARREGLADO */
@@ -103,20 +101,19 @@ a {
   font-size: 15px;
 }
 
-/* Grillas para enlaces internos + externos con función Repeat - NO TOCAR - ARREGLADOS */
+/* Tablas para enlaces internos + externos con función Repeat - NO TOCAR - ARREGLADOS */
 .tabla-de-contenidos-interna {
   display: grid;
-  list-style-type: none;
+  list-style-type: none; /* Elimina los puntos de la lista */
   text-align: center;
   text-transform: uppercase;
-  align-self: center;
-  grid-template-rows: auto auto;
-  grid-template-columns: 1fr 1fr;
-  gap: 5px;
-  height: auto;
-  width: auto;
-  margin: auto;
-  padding: auto;
+  align-items: center; /* Alinea los elementos en el centro verticalmente */
+  grid-template-rows: auto;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajusta las columnas automáticamente */
+  gap: 10px; /* Espacio entre los elementos */
+  margin: 0 auto; /* Centra el contenedor en la página */
+  padding: 0; /* Elimina el padding predeterminado */
+  width: auto; /* Ajusta el ancho al contenido */
 }
 
 .grid-item-externo {
@@ -138,18 +135,19 @@ a {
 #tabla-de-contenidos-principal {
   background-color: rgb(196, 193, 193);
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Dos columnas */
-  grid-template-rows: repeat(5, auto); /* Cinco filas */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta automáticamente las columnas */
+  grid-template-rows: auto; /* Las filas se ajustan al contenido */
   list-style-type: none;
-  justify-content: center;
-  gap: 2%;
+  justify-content: center; /* Centra la cuadrícula horizontalmente */
+  align-items: center; /* Centra los ítems verticalmente en sus celdas */
+  gap: 10px; /* Espacio entre los elementos de la cuadrícula */
   padding: 10px;
   border: 5px solid #000; /* Borde externo más grueso */
-  text-align: justify;
+  text-align: center; /* Alinea el texto al centro */
   text-transform: uppercase;
   margin: auto;
-  width: auto;
-  height: auto;
+  width: auto; /* Ajusta el ancho al contenido de la cuadrícula */
+  height: auto; /* Ajusta la altura al contenido */
 }
 
 .grid-item-principal {
@@ -181,6 +179,11 @@ a {
 #referencias-personales {
   display: grid;
   list-style-type: none;
+  width: auto;
+  height: auto;
+  margin: auto;
+  padding: auto;
+  text-align: auto;
   grid: repeat(1, auto) auto;
   border: 2px solid #8f0202;
   border-radius: 2%;
@@ -191,14 +194,6 @@ a {
   opacity: 0; /* Invisible inicialmente */
   animation: fadeIn 5s ease-in forwards; /* La animación durará 5 segundos */
   animation-delay: 2s; /* Espera 2 segundos antes de iniciar la animación */
-}
-
-#referencias-personales > div {
-  width: auto;
-  height: auto;
-  margin: auto;
-  padding: auto;
-  text-align: auto;
 }
 
 /* Listados - <ol> nombrados con clase - NO TOCAR - ARREGLADO */
@@ -217,7 +212,7 @@ ul, li a {
 .bloque-de-videos {
   display: flex;
   justify-content: center;
-  gap: 500px;
+  gap: 10px;
 }
 
 /* Encuesta - NO TOCAR - ARREGLADO */
@@ -244,26 +239,24 @@ input [type=submit], button {
 
 /* Box Modeling y Flexbox para imágenes - NO TOCAR - ARREGLADO */
 .img-container {
-  display: flex; /* Usa flexbox para el contenedor */
-  flex-wrap: wrap; /* Permite que los elementos se envuelvan en nuevas líneas */
-  gap: 10px; /* Espacio entre los elementos */
-  justify-content: center; /* Centra los elementos horizontalmente */
-  padding: 10px; /* Espaciado interno del contenedor */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
+  gap: 100px; /* Espacio entre las imágenes */
+  padding: 50px; /* Espaciado interno del contenedor */
 }
 
 .img-container img {
-  flex: 1 1 calc(50% - 10px); /* Ajusta el ancho de cada imagen a la mitad del contenedor menos el gap */
-  box-sizing: border-box; /* Incluye el padding y border en el tamaño total */
-  width: 100%; /* Asegura que cada imagen ocupe el 100% del ancho disponible en su columna */
-  height: auto; /* Mantiene la proporción de las imágenes */
-  border-radius: 8px; /* Bordes redondeados opcionales */
+  width: 100%; /* Asegura que cada imagen ocupe el 100% del ancho disponible en su celda */
+  height: 100%; /* Mantiene la proporción de las imágenes */
+  border-radius: none; /* Bordes redondeados opcionales */
 }
 
 .Dedicatoria {
+  align-self: center;
   margin: auto;
   padding: auto;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
   text-align: center;
 }
 
@@ -461,5 +454,19 @@ footer {
   }
 }
 
-
+/* #grillas */
+@keyframes focus {
+  0% {
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    transform: scale(1);
+  }
+}
 /*# sourceMappingURL=Gaming-Style.css.map */
