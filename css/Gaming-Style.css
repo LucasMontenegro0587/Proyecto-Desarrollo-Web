@@ -178,22 +178,21 @@ a {
 
 #referencias-personales {
   display: grid;
-  list-style-type: none;
+  grid-template-columns: 1fr; /* Una columna */
   width: auto;
-  height: auto;
   margin: auto;
-  padding: auto;
-  text-align: auto;
-  grid: repeat(1, auto) auto;
+  padding: 10px; /* Asegúrate de que haya espacio alrededor del contenido */
+  text-align: center; /* Centra el texto horizontalmente */
   border: 2px solid #8f0202;
-  border-radius: 2%;
-  text-align: center;
   text-transform: uppercase;
-  align-self: auto;
-  justify-content: auto;
   opacity: 0; /* Invisible inicialmente */
   animation: fadeIn 5s ease-in forwards; /* La animación durará 5 segundos */
   animation-delay: 2s; /* Espera 2 segundos antes de iniciar la animación */
+}
+
+#referencias-personales div {
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
 }
 
 /* Listados - <ol> nombrados con clase - NO TOCAR - ARREGLADO */
