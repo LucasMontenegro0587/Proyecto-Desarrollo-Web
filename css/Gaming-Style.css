@@ -1,18 +1,56 @@
-@charset "UTF-8";
-/* Estilos generales para todos los HTML's - VER */
-/* Color para usar (opcional) #2B2B2B */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes focus {
+  0% {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    transform: scale(1);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes focus {
+  0% {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    transform: scale(1);
+  }
+}
 body {
   font-family: "Arial", sans-serif;
   line-height: 1.6;
-  justify-content: auto;
-  padding: auto;
-  width: auto;
-  height: auto;
   background-color: black;
   color: #cccccc;
+  margin: 0;
+  padding: 0;
 }
 
-/* Títulos - NO TOCAR - ARREGLADO */
 h2, h3, h4, h5 {
   text-align: justify;
   margin-left: 15px;
@@ -20,27 +58,24 @@ h2, h3, h4, h5 {
 }
 
 header {
+  text-align: center;
   color: rgb(235, 156, 255);
   font-family: "Play", sans-serif;
   font-size: 30px;
-  font-style: bold;
-  text-align: center;
+  font-weight: bold;
 }
 
 h2 {
-  color: rgba(63, 1, 104, 0.5411764706);
+  color: rgba(63, 1, 104, 0.541);
   font-family: "Black Ops One", system-ui;
   font-size: 25px;
-  font-weight: normal;
   font-weight: bold;
 }
 
 h3 {
-  color: rgba(255, 0, 0, 0.5411764706);
+  color: rgba(255, 0, 0, 0.541);
   font-family: "Black Ops One", system-ui;
   font-size: 20px;
-  font-style: normal;
-  font-weight: normal;
   text-decoration: underline;
 }
 
@@ -48,7 +83,6 @@ h4 {
   color: #ffa319;
   font-family: "Black Ops One", system-ui;
   font-size: 18px;
-  font-style: normal;
   font-weight: bold;
 }
 
@@ -56,11 +90,9 @@ h5 {
   color: #eeff00;
   font-family: "Black Ops One", system-ui;
   font-size: 15px;
-  font-style: normal;
   font-weight: bolder;
 }
 
-/* Párrafos - NO TOCAR - ARREGLADO */
 p {
   color: rgb(218, 218, 218);
   font-family: "Black Ops One", system-ui;
@@ -71,128 +103,111 @@ p {
   margin-right: 15px;
 }
 
-/* Navegación - NO TOCAR - ARREGLADO */
 .grillas {
   animation: focus 1s ease-in-out;
 }
 
-/* Secciones y derivados - NO TOCAR - ARREGLADO */
 section {
   margin: 2%;
   background-color: #333;
 }
 
-/* Blockquoute - NO TOCAR - ARREGLADO */
 blockquote {
   margin: 0 10px;
   padding: 10px;
   background-color: #555;
-  border-left: 5px solid #1a1a1a;
+  border: 2px solid #1a1a1a;
   color: #ccc;
 }
 
-/* Enlaces - VER */
 a {
   color: rgb(30, 0, 100);
   text-decoration: none;
   font-size: 15px;
 }
 
-/* Tablas para enlaces internos + externos con función Repeat - NO TOCAR - ARREGLADOS */
 .tabla-de-contenidos-interna {
   display: grid;
-  list-style-type: none; /* Elimina los puntos de la lista */
+  list-style-type: none;
   text-align: center;
   text-transform: uppercase;
-  align-items: center; /* Alinea los elementos en el centro verticalmente */
+  align-items: center;
   grid-template-rows: auto;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajusta las columnas automáticamente */
-  gap: 10px; /* Espacio entre los elementos */
-  margin: 0 auto; /* Centra el contenedor en la página */
-  padding: 0; /* Elimina el padding predeterminado */
-  width: auto; /* Ajusta el ancho al contenido */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  margin: 0 auto;
+  padding: 0;
+  width: auto;
+}
+
+.grid-item-externo, .grid-item-interno, .grid-item-principal {
+  border: 2px solid black;
+  font-weight: bold;
+  text-align: center;
 }
 
 .grid-item-externo {
-  border: 2px solid black; /* Borde negro de 2px en cada celda */
-  font-weight: bold;
-  text-align: center; /* Alineación del contenido */
-  grid-row: repeat(2, auto);
-  grid-column: repeat(2, auto);
+  grid-column: span 2;
+  grid-row: span 2;
 }
 
 .grid-item-interno {
   background-color: grey;
-  font-weight: bold;
   padding: 10px;
-  border: 2px solid black; /* Borde negro de 2px en cada celda */
-  text-align: center; /* Alineación del contenido */
 }
 
 #tabla-de-contenidos-principal {
   background-color: rgb(196, 193, 193);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta automáticamente las columnas */
-  grid-template-rows: auto; /* Las filas se ajustan al contenido */
+  grid-template-columns: 2, minmax(200px, 1fr);
+  grid-template-rows: 5;
   list-style-type: none;
-  justify-content: center; /* Centra la cuadrícula horizontalmente */
-  align-items: center; /* Centra los ítems verticalmente en sus celdas */
-  gap: 10px; /* Espacio entre los elementos de la cuadrícula */
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   padding: 10px;
-  border: 5px solid #000; /* Borde externo más grueso */
-  text-align: center; /* Alinea el texto al centro */
+  border: 2px solid black;
+  text-align: center;
   text-transform: uppercase;
   margin: auto;
-  width: auto; /* Ajusta el ancho al contenido de la cuadrícula */
-  height: auto; /* Ajusta la altura al contenido */
-}
-
-.grid-item-principal {
-  border: 2px solid #000; /* Borde interno */
-  font-weight: bold;
-  text-align: center; /* Alineación del contenido */
-  justify-content: center;
-  padding: 10px;
+  width: auto;
 }
 
 .referencias-externas {
   display: grid;
   list-style-type: none;
-  border: 5px solid #8f0202;
+  border: 2px solid #8f0202;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#referencias-personales {
+  display: grid;
+  list-style-type: none;
+  border: 2px solid #8f0202;
   border-radius: 2%;
   text-align: center;
   text-transform: uppercase;
   align-items: center;
-  grid-row: auto;
-  grid-column: auto;
   grid-template-rows: repeat(2, auto);
   grid-template-columns: repeat(3, auto);
-  height: auto;
-  width: auto;
   margin: auto;
   padding: auto;
 }
 
 #referencias-personales {
-  display: grid;
-  grid-template-columns: 1fr; /* Una columna */
-  width: auto;
-  margin: auto;
-  padding: 10px; /* Asegúrate de que haya espacio alrededor del contenido */
-  text-align: center; /* Centra el texto horizontalmente */
-  border: 2px solid #8f0202;
-  text-transform: uppercase;
-  opacity: 0; /* Invisible inicialmente */
-  animation: fadeIn 5s ease-in forwards; /* La animación durará 5 segundos */
-  animation-delay: 2s; /* Espera 2 segundos antes de iniciar la animación */
+  grid-template-columns: 1fr;
+  opacity: 0;
+  animation: fadeIn 5s ease-in forwards;
+  animation-delay: 2s;
 }
 
 #referencias-personales div {
   display: flex;
-  justify-content: center; /* Centra el contenido horizontalmente */
+  justify-content: center;
+  align-items: center;
 }
 
-/* Listados - <ol> nombrados con clase - NO TOCAR - ARREGLADO */
 ul, li a {
   font-size: 18px;
 }
@@ -208,23 +223,22 @@ ul, li a {
 .bloque-de-videos {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 10px;
 }
 
-/* Encuesta - NO TOCAR - ARREGLADO */
 .Encuesta {
-  border: 2px solid #000000;
+  border: 2px solid black;
   border-radius: 5px;
-  background-color: rgba(245, 245, 245, 0.3490196078);
-  color: #000000;
+  background-color: rgba(245, 245, 245, 0.35);
+  color: #000;
   max-width: auto;
   padding: auto;
   margin: auto;
   text-align: center;
 }
 
-/* inputs - NO TOCAR - ARREGLADO */
-input [type=submit], button {
+input[type=submit], button {
   background-color: #09ff00;
   color: #fff;
   border: none;
@@ -233,40 +247,33 @@ input [type=submit], button {
   transition: background-color 0.3s ease;
 }
 
-/* Box Modeling y Flexbox para imágenes - NO TOCAR - ARREGLADO */
 .img-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
-  gap: 100px; /* Espacio entre las imágenes */
-  padding: 50px; /* Espaciado interno del contenedor */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 100px;
+  padding: 50px;
 }
 
 .img-container img {
-  width: 100%; /* Asegura que cada imagen ocupe el 100% del ancho disponible en su celda */
-  height: 100%; /* Mantiene la proporción de las imágenes */
-  border-radius: none; /* Bordes redondeados opcionales */
+  width: 100%;
+  height: 100%;
 }
 
 .Dedicatoria {
-  align-self: center;
-  margin: auto;
-  padding: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
-  text-align: center;
 }
 
-/* Opinión personal - NO TOCAR - ARREGLADO */
 #opinion {
   text-align: justify;
   margin: 1%;
 }
 
-/* Footer - NO TOCAR - ARREGLADO */
 footer {
   font-family: "Exo 2", sans-serif;
-  font-style: normal;
-  font-optical-sizing: auto;
   font-weight: bold;
   text-align: center;
   background-color: #333;
@@ -277,191 +284,4 @@ footer {
   width: center;
 }
 
-/* Media Query */
-/* Dispositivos Móviles */
-@media (min-width: 320px) and (max-width: 600px) {
-  body {
-    width: 100%; /* Asegura que el body ocupe todo el ancho disponible */
-    height: auto;
-    padding: 10px;
-    margin: 0; /* Elimina márgenes para aprovechar al máximo el espacio */
-    font-size: 16px; /* Tamaño base para la tipografía */
-  }
-  header, h2, h3, h4, h5, p, .img-container, .bloque-de-videos, .tabla-de-contenidos-interna, #tabla-de-contenidos-principal, .referencias-externas, #referencias-personales, .grid-item-externo, .grid-item-interno, .grid-item-principal {
-    box-sizing: border-box; /* Asegura que el padding y border se incluyan en el cálculo del ancho y alto */
-  }
-  header {
-    font-size: 24px;
-  }
-  h2 {
-    font-size: 20px;
-  }
-  h3 {
-    font-size: 18px;
-  }
-  h4 {
-    font-size: 16px;
-  }
-  h5 {
-    font-size: 14px;
-  }
-  p {
-    font-size: 14px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-  .img-container, img {
-    flex: 1 1 100%; /* En pantallas pequeñas, cada imagen ocupará el 100% del ancho del contenedor */
-  }
-}
-.bloque-de-videos {
-  flex-direction: column;
-  gap: 10px;
-}
-
-.tabla-de-contenidos-interna, #tabla-de-contenidos-principal {
-  grid-template-columns: 1fr;
-}
-
-.referencias-externas, #referencias-personales {
-  grid-template-columns: 1fr;
-}
-
-.grid-item-externo, .grid-item-interno, .grid-item-principal {
-  padding: 5px;
-}
-
-/* Tablets y dispositivos de tamaño medio */
-@media (min-width: 720px) and (max-width: 900px) {
-  body {
-    width: auto;
-    height: auto;
-    padding: 15px;
-    margin: 10px;
-    font-size: 18px; /* Tamaño base para pantallas medianas */
-  }
-  header {
-    font-size: 28px;
-  }
-  h2 {
-    font-size: 22px;
-  }
-  h3 {
-    font-size: 19px;
-  }
-  h4 {
-    font-size: 17px;
-  }
-  h5 {
-    font-size: 15px;
-  }
-  p {
-    font-size: 16px;
-    margin-left: 12px;
-    margin-right: 12px;
-  }
-  .img-container, img {
-    flex: 1 1 calc(50% - 10px); /* Dos columnas en pantallas medianas */
-    width: calc(50% - 10px); /* 50% del ancho del contenedor, con espacio para el margen */
-    height: auto; /* Imagen proporcional */
-  }
-  .bloque-de-videos {
-    flex-direction: row;
-    gap: 20px;
-  }
-  .tabla-de-contenidos-interna {
-    grid-template-columns: 1fr 1fr; /* Dos columnas iguales en la tabla de contenidos interna */
-  }
-  #tabla-de-contenidos-principal {
-    grid-template-columns: repeat(2, 1fr); /* Dos columnas en tablets */
-    grid-template-rows: repeat(5, auto); /* Cinco filas en tablets */
-  }
-  .referencias-externas, #referencias-personales {
-    grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales en las secciones de referencias */
-  }
-  .grid-item-externo, .grid-item-interno, .grid-item-principal {
-    padding: 10px; /* Espaciado interno de los elementos de la cuadrícula */
-  }
-}
-/* Escritorio */
-@media (min-width: 1024px) and (max-width: 1200px) {
-  body {
-    width: auto;
-    height: auto;
-    padding: 20px;
-    margin: 20px;
-    font-size: 20px; /* Tamaño base para la tipografía en pantallas grandes */
-  }
-  header {
-    font-size: 32px;
-  }
-  h2 {
-    font-size: 24px;
-  }
-  h3 {
-    font-size: 21px;
-  }
-  h4 {
-    font-size: 19px;
-  }
-  h5 {
-    font-size: 17px;
-  }
-  p {
-    font-size: 18px;
-    margin-left: 15px;
-    margin-right: 15px;
-  }
-  .img-container, img {
-    width: calc(33% - 10px); /* Tres imágenes por fila, ajustadas con un pequeño margen */
-    height: auto; /* Mantiene la proporción de la imagen */
-  }
-  .bloque-de-videos {
-    flex-direction: row;
-    gap: 30px; /* Mayor espacio entre los videos */
-  }
-  .tabla-de-contenidos-interna {
-    grid-template-columns: 1fr 1fr 1fr; /* Tres columnas iguales en la tabla de contenidos interna */
-  }
-  #tabla-de-contenidos-principal {
-    grid-template-columns: repeat(2, 1fr); /* Dos columnas en escritorios */
-    grid-template-rows: repeat(5, auto); /* Cinco filas en escritorios */
-  }
-  .referencias-externas, #referencias-personales {
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales en las secciones de referencias */
-  }
-  .grid-item-externo, .grid-item-interno, .grid-item-principal {
-    padding: 15px; /* Espaciado interno de los elementos de la cuadrícula */
-  }
-}
-@media (min-width: 1200px) {
-  #tabla-de-contenidos-principal {
-    grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas grandes */
-    grid-template-rows: repeat(5, auto); /* Cinco filas en pantallas grandes */
-  }
-}
-/* Animaciones - #referencias-personales y #grillas - NO TOCAR - ARREGLADO */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes focus {
-  0% {
-    box-shadow: 0 0 5px rgba(0,0,0,0.5);
-    transform: scale(1);
-  }
-  50% {
-    box-shadow: 0 0 20px rgba(0,0,0,0.8);
-    transform: scale(1.05);
-  }
-  100% {
-    box-shadow: 0 0 5px rgba(0,0,0,0.5);
-    transform: scale(1);
-  }
-}
 /*# sourceMappingURL=Gaming-Style.css.map */

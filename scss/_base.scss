@@ -126,8 +126,8 @@ a {
 #tabla-de-contenidos-principal {
   background-color: rgb(196, 193, 193);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-template-rows: auto;
+  grid-template-columns: 2;
+  grid-template-rows: 5;
   list-style-type: none;
   justify-content: center;
   align-items: center;
@@ -140,7 +140,15 @@ a {
   width: auto;
 }
 
-.referencias-externas, #referencias-personales {
+.referencias-externas {
+  display: grid;
+  list-style-type: none;
+  @include border($color-references-border);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#referencias-personales {
   display: grid;
   list-style-type: none;
   @include border($color-references-border);
