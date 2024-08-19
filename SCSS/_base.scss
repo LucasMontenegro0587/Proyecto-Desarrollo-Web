@@ -1,0 +1,245 @@
+@import 'variables';
+@import 'mixins';
+@import 'animations';
+
+// Estilos generales para todos los HTML's
+body {
+  font-family: $font-family-primary;
+  line-height: 1.6;
+  background-color: $color-bg;
+  color: $color-text;
+  margin: 0;
+  padding: 0;
+}
+
+// Títulos
+h2, h3, h4, h5 {
+  text-align: justify;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+header {
+  @include text-center;
+  color: $color-header;
+  font-family: $font-family-secondary;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+h2 {
+  color: $color-h2;
+  font-family: $font-family-tertiary;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+h3 {
+  color: $color-h3;
+  font-family: $font-family-tertiary;
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+h4 {
+  color: $color-h4;
+  font-family: $font-family-tertiary;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+h5 {
+  color: $color-h5;
+  font-family: $font-family-tertiary;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+// Párrafos
+p {
+  color: $color-paragraph;
+  font-family: $font-family-tertiary;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: justify;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+// Navegación
+.grillas {
+  animation: focus 1s ease-in-out;
+}
+
+// Secciones y derivados
+section {
+  margin: 2%;
+  background-color: #333;
+}
+
+// Blockquote
+blockquote {
+  margin: 0 10px;
+  padding: 10px;
+  background-color: $color-blockquote-bg;
+  @include border($color-blockquote-border);
+  color: #ccc;
+}
+
+// Enlaces
+a {
+  color: $color-link;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+// Tablas para enlaces internos y externos
+.tabla-de-contenidos-interna {
+  display: grid;
+  list-style-type: none;
+  text-align: center;
+  text-transform: uppercase;
+  align-items: center;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: $gap;
+  margin: 0 auto;
+  padding: 0;
+  width: auto;
+}
+
+.grid-item-externo, .grid-item-interno, .grid-item-principal {
+  @include border($color-grid-item-border);
+  font-weight: bold;
+  @include text-center;
+}
+
+.grid-item-externo {
+  @include grid-item(2, 2);
+}
+
+.grid-item-interno {
+  background-color: grey;
+  padding: 10px;
+}
+
+#tabla-de-contenidos-principal {
+  background-color: rgb(196, 193, 193);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-rows: auto;
+  list-style-type: none;
+  justify-content: center;
+  align-items: center;
+  gap: $gap;
+  padding: 10px;
+  @include border;
+  text-align: center;
+  text-transform: uppercase;
+  margin: auto;
+  width: auto;
+}
+
+.referencias-externas, #referencias-personales {
+  display: grid;
+  list-style-type: none;
+  @include border($color-references-border);
+  border-radius: 2%;
+  text-align: center;
+  text-transform: uppercase;
+  align-items: center;
+  grid-template-rows: repeat(2, auto);
+  grid-template-columns: repeat(3, auto);
+  margin: auto;
+  padding: auto;
+}
+
+#referencias-personales {
+  grid-template-columns: 1fr;
+  opacity: 0;
+  animation: fadeIn 5s ease-in forwards;
+  animation-delay: 2s;
+}
+
+#referencias-personales div {
+  @include center-content;
+}
+
+// Listados
+ul, li a {
+  font-size: 18px;
+}
+
+.listado-uno, .listado-dos {
+  color: black;
+  font-weight: bold;
+  list-style-type: circle;
+  margin-right: 50px;
+  text-align: justify;
+}
+
+.bloque-de-videos {
+  @include center-content;
+  gap: $gap;
+}
+
+// Encuesta
+.Encuesta {
+  @include border;
+  border-radius: 5px;
+  background-color: rgba(245, 245, 245, 0.35);
+  color: #000;
+  max-width: auto;
+  padding: auto;
+  margin: auto;
+  text-align: center;
+}
+
+// Inputs y botones
+input[type=submit], button {
+  background-color: $color-submit-bg;
+  color: $color-submit-text;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+// Box Modeling y Flexbox para imágenes
+.img-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 100px;
+  padding: 50px;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+}
+
+// Dedicatoria
+.Dedicatoria {
+  @include center-content;
+  width: 100%;
+  height: 100%;
+}
+
+// Opinión personal
+#opinion {
+  text-align: justify;
+  margin: 1%;
+}
+
+// Footer
+footer {
+  font-family: "Exo 2", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  background-color: #333;
+  color: #ccc;
+  padding: center;
+  position: center;
+  bottom: center;
+  width: center;
+}

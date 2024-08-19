@@ -1,0 +1,19 @@
+// Mixins
+@mixin center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin grid-item($columns: 1, $rows: 1) {
+  grid-column: span $columns;
+  grid-row: span $rows;
+}
+
+@mixin border($color: black, $width: $border-width) {
+  border: $width solid $color;
+}
+
+@mixin text-center {
+  text-align: center;
+}
