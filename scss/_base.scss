@@ -73,7 +73,6 @@ p {
 
 // Secciones y derivados
 section {
-  margin: 2%;
   background-color: #333;
 }
 
@@ -144,7 +143,7 @@ a {
   display: grid;
   list-style-type: none;
   @include border($color-references-border);
-  align-items: center;
+  justify-items: center;
   width: 50%;
   height: 50%;
   text-align: center;
@@ -153,7 +152,7 @@ a {
 
 #referencias-personales {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr(3, auto);
   list-style-type: none;
   @include border($color-references-border);
   border-radius: 2%;
@@ -161,7 +160,6 @@ a {
   text-transform: uppercase;
   align-items: center;
   grid-template-rows: repeat(2, auto);
-  grid-template-columns: repeat(3, auto);
   margin: auto;
   padding: auto;
   opacity: 0;
@@ -170,7 +168,7 @@ a {
 }
 
 #referencias-personales div {
-  @include center-content;
+  @include align-items;
 }
 
 // Listados
