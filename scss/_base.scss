@@ -143,6 +143,7 @@ a {
   display: grid;
   list-style-type: none;
   @include border($color-references-border);
+  align-items: center;
   justify-items: center;
   width: 50%;
   height: 50%;
