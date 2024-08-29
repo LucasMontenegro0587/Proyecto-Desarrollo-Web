@@ -144,12 +144,16 @@ a {
   display: grid;
   list-style-type: none;
   @include border($color-references-border);
+  align-items: center;
+  width: 50%;
+  height: 50%;
   text-align: center;
   text-transform: uppercase;
 }
 
 #referencias-personales {
   display: grid;
+  grid-template-columns: 1fr;
   list-style-type: none;
   @include border($color-references-border);
   border-radius: 2%;
@@ -160,10 +164,6 @@ a {
   grid-template-columns: repeat(3, auto);
   margin: auto;
   padding: auto;
-}
-
-#referencias-personales {
-  grid-template-columns: 1fr;
   opacity: 0;
   animation: fadeIn 5s ease-in forwards;
   animation-delay: 2s;
