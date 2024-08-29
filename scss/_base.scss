@@ -145,10 +145,11 @@ a {
   @include border($color-references-border);
   align-items: center;
   justify-items: center;
-  width: 50%;
-  height: 50%;
+  width: 100%;
+  height: 100%;
   text-align: center;
   text-transform: uppercase;
+  margin: auto;
 }
 
 #referencias-personales {
@@ -221,13 +222,6 @@ input[type=submit], button {
 }
 
 .img-container img {
-  width: 100%;
-  height: 100%;
-}
-
-// Dedicatoria
-.Dedicatoria {
-  @include center-content;
   width: 100%;
   height: 100%;
 }
