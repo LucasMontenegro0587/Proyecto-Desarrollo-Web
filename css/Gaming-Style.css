@@ -159,7 +159,7 @@ a {
 #tabla-de-contenidos-principal {
   background-color: rgb(196, 193, 193);
   display: grid;
-  grid-template-columns: 2, minmax(200px, 1fr);
+  grid-template-columns: 2;
   grid-template-rows: 5;
   list-style-type: none;
   justify-content: center;
@@ -177,12 +177,16 @@ a {
   display: grid;
   list-style-type: none;
   border: 2px solid #8f0202;
+  align-items: center;
+  width: 50%;
+  height: 50%;
   text-align: center;
   text-transform: uppercase;
 }
 
 #referencias-personales {
   display: grid;
+  grid-template-columns: 1fr;
   list-style-type: none;
   border: 2px solid #8f0202;
   border-radius: 2%;
@@ -193,10 +197,6 @@ a {
   grid-template-columns: repeat(3, auto);
   margin: auto;
   padding: auto;
-}
-
-#referencias-personales {
-  grid-template-columns: 1fr;
   opacity: 0;
   animation: fadeIn 5s ease-in forwards;
   animation-delay: 2s;
@@ -284,4 +284,83 @@ footer {
   width: center;
 }
 
-/*# sourceMappingURL=Gaming-Style.css.map */
+@media (max-width: 1200px) {
+  .img-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 50px;
+    padding: 30px;
+  }
+  .grid-item-externo {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .referencias-externas {
+    width: 70%;
+    height: auto;
+  }
+}
+@media (max-width: 768px) {
+  header {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  h4 {
+    font-size: 16px;
+  }
+  h5 {
+    font-size: 14px;
+  }
+  p {
+    font-size: 14px;
+  }
+  .tabla-de-contenidos-interna {
+    grid-template-columns: 1fr;
+  }
+  .img-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+  .Encuesta {
+    padding: 20px;
+  }
+  footer {
+    font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+  header {
+    font-size: 20px;
+  }
+  h2 {
+    font-size: 18px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+  h4 {
+    font-size: 14px;
+  }
+  h5 {
+    font-size: 12px;
+  }
+  p {
+    font-size: 12px;
+  }
+  ul, li a {
+    font-size: 16px;
+  }
+  .Encuesta {
+    padding: 10px;
+  }
+  footer {
+    font-size: 12px;
+  }
+}
+
+/*# sourceMappingURL=gaming-style.css.map */
